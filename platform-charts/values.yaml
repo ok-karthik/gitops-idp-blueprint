@@ -9,6 +9,11 @@ spec:
       targetRevision: '26.0.0'
       chart: traefik
       namespace: traefik
+      helm:
+        parameters:
+          # Tells Traefik to populate the ADDRESS field on all Ingresses
+          - name: "providers.kubernetesIngress.publishedService.enabled"
+            value: "true"
     - name: cert-manager
       repoURL: 'https://charts.jetstack.io/'
       targetRevision: 'v1.20.1'
