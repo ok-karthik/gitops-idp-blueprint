@@ -1,0 +1,16 @@
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  bootstrapApplications:
+    - name: traefik
+      repoURL: 'https://helm.traefik.io/traefik'
+      targetRevision: '26.0.0'
+      chart: traefik
+      namespace: traefik
+    - name: cert-manager
+      repoURL: 'https://charts.jetstack.io/jetstack'
+      targetRevision: 'v1.20.1'
+      chart: cert-manager
+      namespace: cert-manager
