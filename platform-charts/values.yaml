@@ -23,3 +23,12 @@ spec:
         parameters:
           - name: "crds.enabled"
             value: "true"
+    - name: sealed-secrets
+      repoURL: 'https://bitnami-labs.github.io/sealed-secrets'
+      targetRevision: '2.18.5'
+      chart: sealed-secrets
+      namespace: kube-system
+      helm:
+        parameters:
+          - name: "fullnameOverride"
+            value: "sealed-secrets-controller"
