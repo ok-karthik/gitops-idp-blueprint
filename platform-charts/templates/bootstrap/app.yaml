@@ -11,6 +11,17 @@ spec:
     repoURL: {{ $app.repoURL }}
     targetRevision: {{ $app.targetRevision }}
     chart: {{ $app.chart }}
+    {{- if $app.helm }}
+    # Conditionally render Helm parameters
+    helm:
+      {{- if $app.helm.parameters }}
+      parameters:
+        {{- range $param := $app.helm.parameters }}
+        - name: {{ $param.name | quote }}
+          value: {{ $param.value | quote }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
   destination:
     server: {{ $.Values.spec.destination.server }}
     namespace: {{ $app.namespace }}

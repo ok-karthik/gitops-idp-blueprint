@@ -14,3 +14,7 @@ spec:
       targetRevision: 'v1.20.1'
       chart: cert-manager
       namespace: cert-manager
+      helm:
+        parameters:
+          - name: "crds.enabled"
+            value: "true"
