@@ -32,3 +32,8 @@ spec:
         parameters:
           - name: "fullnameOverride"
             value: "sealed-secrets-controller"
+    - name: crossplane
+      repoURL: 'https://charts.crossplane.io/stable'
+      targetRevision: '2.2.0'
+      chart: crossplane
+      namespace: crossplane-system
