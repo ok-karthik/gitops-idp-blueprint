@@ -1,0 +1,19 @@
+# Save this on your laptop as master-app.yaml and run: kubectl apply -f master-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: master-bootstrap
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/ok-karthik/my-local-platform.git'
+    targetRevision: HEAD
+    path: platform-charts    # This tells Argo to apply everything inside the bootstrap folder!
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

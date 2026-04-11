@@ -10,7 +10,7 @@ spec:
       chart: traefik
       namespace: traefik
     - name: cert-manager
-      repoURL: 'https://charts.jetstack.io/jetstack'
+      repoURL: 'https://charts.jetstack.io/'
       targetRevision: 'v1.20.1'
       chart: cert-manager
       namespace: cert-manager
