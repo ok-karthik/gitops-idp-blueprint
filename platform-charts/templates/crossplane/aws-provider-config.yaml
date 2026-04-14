@@ -1,0 +1,16 @@
+apiVersion: aws.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: aws-creds
+      key: creds
+
+# Create secret prior to this config using or something similar
+# kubectl create secret generic aws-creds \
+#  -n crossplane-system \
+#  --from-file=creds=./aws-creds.ini
