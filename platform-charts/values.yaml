@@ -9,6 +9,8 @@ spec:
       targetRevision: '26.0.0'
       chart: traefik
       namespace: traefik
+      syncOptions:
+        - CreateNamespace=true
       helm:
         parameters:
           # Tells Traefik to populate the ADDRESS field on all Ingresses
@@ -19,6 +21,8 @@ spec:
       targetRevision: 'v1.20.1'
       chart: cert-manager
       namespace: cert-manager
+      syncOptions:
+        - CreateNamespace=true
       helm:
         parameters:
           - name: "crds.enabled"
@@ -28,12 +32,32 @@ spec:
       targetRevision: '2.18.5'
       chart: sealed-secrets
       namespace: kube-system
+      syncOptions:
+        - CreateNamespace=true
       helm:
         parameters:
           - name: "fullnameOverride"
             value: "sealed-secrets-controller"
-    - name: crossplane
-      repoURL: 'https://charts.crossplane.io/stable'
-      targetRevision: '2.2.0'
-      chart: crossplane
-      namespace: crossplane-system
+    - name: kyverno
+      repoURL: 'https://kyverno.github.io/kyverno/'
+      targetRevision: '3.7.1'
+      chart: kyverno
+      namespace: kyverno
+      syncOptions:
+        - CreateNamespace=true
+        - Replace=true
+      helm:
+        parameters:
+          - name: admissionController.replicas
+            value: "1"
+          - name: backgroundController.replicas
+            value: "1"
+          - name: cleanupController.replicas
+            value: "1"
+          - name: reportsController.replicas
+            value: "1"
+#    - name: crossplane
+#      repoURL: 'https://charts.crossplane.io/stable'
+#      targetRevision: '2.2.0'
+#      chart: crossplane
+#      namespace: crossplane-system

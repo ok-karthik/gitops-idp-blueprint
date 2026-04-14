@@ -1,19 +1,19 @@
-apiVersion: pkg.crossplane.io/v1beta1
-kind: DeploymentRuntimeConfig
-metadata:
-  name: high-memory-config
-spec:
-  deploymentTemplate:
-    spec:
-      selector: {}
-      template:
-        spec:
-          containers:
-            - name: package-runtime
-              resources:
-                requests:
-                  cpu: 100m
-                  memory: 256Mi
-                limits:
-                  cpu: 1000m
-                  memory: 1Gi # Bumping the limit to 1 Gigabyte!
+#apiVersion: pkg.crossplane.io/v1beta1
+#kind: DeploymentRuntimeConfig
+#metadata:
+#  name: high-memory-config
+#spec:
+#  deploymentTemplate:
+#    spec:
+#      selector: {}
+#      template:
+#        spec:
+#          containers:
+#            - name: package-runtime
+#              resources:
+#                requests:
+#                  cpu: 100m
+#                  memory: 256Mi
+#                limits:
+#                  cpu: 1000m
+#                  memory: 1Gi # Bumping the limit to 1 Gigabyte!

@@ -30,7 +30,11 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+     {{- if $app.syncOptions }}
+      {{- range $option := $app.syncOptions }}
+      - {{ $option }}
+      {{- end }}
+      {{- end }}
 ---
 {{- end }}
 {{- end }}

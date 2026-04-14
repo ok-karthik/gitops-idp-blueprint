@@ -7,3 +7,4 @@ spec:
   parameters:
     bucketName: my-idp-test-bucket-998877 # Change this to something random!
     region: us-east-1
+    isEncrypted: true
