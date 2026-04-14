@@ -7,9 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/ok-karthik/my-local-platform.git'
+    repoURL: "https://github.com/ok-karthik/gitops-idp-blueprint.git"
     targetRevision: HEAD
-    path: platform-charts    # This tells Argo to apply everything inside the bootstrap folder!
+    path: platform-charts # This tells Argo to apply everything inside the bootstrap folder!
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
