@@ -38,24 +38,24 @@ spec:
         parameters:
           - name: "fullnameOverride"
             value: "sealed-secrets-controller"
-    - name: kyverno
-      repoURL: 'https://kyverno.github.io/kyverno/'
-      targetRevision: '3.7.1'
-      chart: kyverno
-      namespace: kyverno
-      syncOptions:
-        - CreateNamespace=true
-        - Replace=true
-      helm:
-        parameters:
-          - name: admissionController.replicas
-            value: "1"
-          - name: backgroundController.replicas
-            value: "1"
-          - name: cleanupController.replicas
-            value: "1"
-          - name: reportsController.replicas
-            value: "1"
+#    - name: kyverno
+#      repoURL: 'https://kyverno.github.io/kyverno/'
+#      targetRevision: '3.7.1'
+#      chart: kyverno
+#      namespace: kyverno
+#      syncOptions:
+#        - CreateNamespace=true
+#        - Replace=true
+#      helm:
+#        parameters:
+#          - name: admissionController.replicas
+#            value: "1"
+#          - name: backgroundController.replicas
+#            value: "1"
+#          - name: cleanupController.replicas
+#            value: "1"
+#          - name: reportsController.replicas
+#            value: "1"
 #    - name: crossplane
 #      repoURL: 'https://charts.crossplane.io/stable'
 #      targetRevision: '2.2.0'
