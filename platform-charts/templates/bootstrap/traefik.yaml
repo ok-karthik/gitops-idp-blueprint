@@ -21,8 +21,6 @@ spec:
           value: "internet-facing"
         - name: "ports.traefik.expose"
           value: "true"
-        - name: "ports.web.redirectTo"
-          value: "websecure"
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: traefik
