@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-rollouts
+  namespace: {{ .Values.spec.destination.namespace }}
+spec:
+  project: {{ .Values.spec.project }}
+  source:
+    repoURL: 'https://argoproj.github.io/argo-helm'
+    targetRevision: '2.37.2'
+    chart: argo-rollouts
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: argo-rollouts
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
