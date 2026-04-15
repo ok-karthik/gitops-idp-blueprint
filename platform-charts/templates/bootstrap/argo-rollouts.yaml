@@ -28,3 +28,7 @@ spec:
       name: "argo-rollouts-notification-secret"
       jsonPointers:
         - /data
+    - group: "apiextensions.k8s.io"
+      kind: "CustomResourceDefinition"
+      jsonPointers:
+        - /spec/preserveUnknownFields
