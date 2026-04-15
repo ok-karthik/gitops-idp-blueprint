@@ -18,3 +18,13 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+  ignoreDifferences:
+    - group: "admissionregistration.k8s.io"
+      kind: "MutatingWebhookConfiguration"
+      jsonPointers:
+        - /webhooks/0/clientConfig/caBundle
+    - group: ""
+      kind: "Secret"
+      name: "argo-rollouts-notification-secret"
+      jsonPointers:
+        - /data
