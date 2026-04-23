@@ -1,5 +1,8 @@
 # GitOps Internal Developer Platform (IDP) Blueprint
 
+> ⚠️ **Under Development / Work In Progress**
+> As of now, this is a non-functional repository demonstrating an architecture using tools like ArgoCD (App of Apps), Sealed Secrets, Cert Manager, and more. This project is actively being developed as a blueprint and will be expanded in the coming weeks/months.
+
 A declarative Internal Developer Platform (IDP) designed for local-to-cloud infrastructure orchestration. This blueprint implements a "Local-First" Control Plane architecture to manage cloud resources and application lifecycles via GitOps.
 
 ---
@@ -86,3 +89,15 @@ spec:
     region: us-east-1
     isEncrypted: true
 ```
+
+---
+
+## 🗺️ Future Roadmap / Upcoming Features
+
+- **OPA Gatekeeper / Kyverno Integration**: Advanced policy enforcement.
+- **Backstage**: Developer portal integration to centralize service catalogs and templates.
+- **Custom CLI**: A command-line interface to create new instances of Kubernetes clusters on the cloud pre-configured with these specific tools.
+- **Platform Security Guardrails**: Mechanisms to restrict developers to certain safe changes in infrastructure components using policy-as-code tools.
+- **Observability Stack**: Full metrics, logs, and traces using Loki, Grafana, and Tempo.
+- **Continuous refinement**: Hardening the GitOps workflows and expanding the component catalog.
+
